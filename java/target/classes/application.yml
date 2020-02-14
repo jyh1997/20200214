@@ -1,0 +1,15 @@
+server:
+  #�˿ں�
+  port: 8080
+  servlet:
+    #��Ŀ��
+    context-path: /
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/garbage_colletion?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
+mybatis:
+  type-aliases-package: com.hm.wechat.domain
+  mapper-locations: classpath:mapperxml/*.xml
