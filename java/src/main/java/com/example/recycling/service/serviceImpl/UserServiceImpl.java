@@ -42,6 +42,8 @@ public class UserServiceImpl implements UserService {
             result.msg("密码错误");
             return result;
         }
+
+
         result.put("user",dataUser);
         result.msg("登录成功");
         System.out.println("返回用户认证信息");
