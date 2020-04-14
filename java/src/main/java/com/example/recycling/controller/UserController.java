@@ -4,7 +4,6 @@ import com.example.recycling.commons.core.R;
 import com.example.recycling.commons.utils.BeanMapUtils;
 import com.example.recycling.entity.User;
 import com.example.recycling.service.UserService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
