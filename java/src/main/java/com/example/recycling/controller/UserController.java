@@ -1,11 +1,14 @@
 package com.example.recycling.controller;
 
 import com.example.recycling.commons.core.R;
+import com.example.recycling.commons.utils.BeanMapUtils;
 import com.example.recycling.entity.User;
 import com.example.recycling.service.UserService;
-import com.example.recycling.service.serviceImpl.UserServiceImpl;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * @author jyh
@@ -20,8 +23,15 @@ public class UserController {
     UserService userService;
 
     @PostMapping("isLogin")
-    public R isUserLogin(@RequestBody User user) {
+    public R isUserLogin(@RequestBody Map<String, Object> map) {
         R result = R.ok();
+        User user = null;
+        try {
+            user = BeanMapUtils.mapToBean(map, User.class);
+        } catch (Exception e) {
+            result.code(22);
+            result.msg("接受数据失败");
+        }
         result = userService.isLogin(user);
         return result;
     }

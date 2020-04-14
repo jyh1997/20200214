@@ -1,6 +1,6 @@
 server:
   #�˿ں�
-  port: 8080
+  port: 8086
   servlet:
     #��Ŀ��
     context-path: /
@@ -11,5 +11,12 @@ spring:
     username: root
     password: 1234
 mybatis:
-  type-aliases-package: com.hm.wechat.domain
-  mapper-locations: classpath:mapperxml/*.xml
+  type-aliases-package: com.example.recycling.entity
+  mapper-locations: classpath:com/example/recycling/dao/mapperxml/*.xml
+#mybatis配置
+#//天行数据接口
+tianapi:
+  url: http://api.tianapi.com/txapi/hotlajifenlei/index
+  #搜索词分类接口
+  searchWord: http://api.tianapi.com/txapi/lajifenlei/index
+  searchImg: http://api.tianapi.com/txapi/imglajifenlei/index
